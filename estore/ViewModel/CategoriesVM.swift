@@ -21,7 +21,7 @@ class CategoriesVM: ObservableObject {
         do {
             categories = try await APIService.shared.fetchData(from: "categories", returning: [CategoryModel].self)
         } catch {
-            errMessage = "Failed to fetch"
+            errMessage = "Failed to fetch categories"
             print(error)
         }
     }

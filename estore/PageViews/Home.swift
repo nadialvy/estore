@@ -9,23 +9,28 @@ import SwiftUI
 
 struct Home: View {
     @StateObject private var categoriesVM = CategoriesVM()
+    
     var body: some View {
         NavigationStack{
             ScrollView{
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),]) {
                     ForEach(categoriesVM.categories, id: \.id){ item in
-                        VStack{
-                            AsyncImage(url: URL(string: item.image)){ image in
-                                image
-                                    .resizable()
-                                    .frame(width: 100, height: 100)
-                                    .cornerRadius(12)
-                                
-                            }placeholder: {
-                                ProgressView()
-                                    .frame(width: 100, height: 100)
+                        NavigationLink {
+                            ProductList(categoryId: item.id)
+                        } label: {
+                            VStack{
+                                AsyncImage(url: URL(string: item.image)){ image in
+                                    image
+                                        .resizable()
+                                        .frame(width: 100, height: 100)
+                                        .cornerRadius(12)
+                                } placeholder: {
+                                    ProgressView()
+                                        .frame(width: 100, height: 100)
+                                }
+                                Text(item.name)
+                                    .foregroundStyle(.black)
                             }
-                            Text(item.name)
                         }
                     }
                 }
