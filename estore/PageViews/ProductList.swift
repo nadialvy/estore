@@ -16,7 +16,7 @@ struct ProductList: View {
             List(content: {
                 ForEach(productsVM.products, id: \.id){ product in
                     NavigationLink{
-                        ProductDetail()
+                        ProductDetail(productId: product.id)
                     } label: {
                         ProductCard(imgUrl: "clothes", name: product.title, desc: product.description, price: product.price)
                     }

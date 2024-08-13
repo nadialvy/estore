@@ -8,36 +8,29 @@
 import SwiftUI
 
 struct ProductDetail: View {
+    var productId: Int
+    @StateObject private var productDetailVM = ProductDetailVM()
     var body: some View {
         NavigationStack{
             VStack{
-                Text("Baju Coquette Warna Pink")
+                Text(productDetailVM.productDetail.title)
                     .font(.title)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                 ScrollView(.horizontal, showsIndicators: false){
                     HStack{
-                        AsyncImage(url: URL(string: "hehe")){ image in
-                            image
-                                .resizable()
-                                .frame(width: 120, height: 120)
-                                .cornerRadius(12)
-                        } placeholder: {
-                            ProgressView()
-                                .frame(width: 120, height: 120)
+                        ForEach(productDetailVM.productDetail.images, id: \.self){ img in
+                            AsyncImage(url: URL(string: img)){ image in
+                                image
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
+                                    .cornerRadius(12)
+                            } placeholder: {
+                                ProgressView()
+                                    .frame(width: 120, height: 120)
+                            }
+
                         }
-                        Image("clothes")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .cornerRadius(12)
-                        Image("clothes")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .cornerRadius(12)
-                        Image("clothes")
-                            .resizable()
-                            .frame(width: 120, height: 120)
-                            .cornerRadius(12)
                     }
                 }
                 GroupBox {
@@ -47,12 +40,12 @@ struct ProductDetail: View {
                             Text("Product Info")
                                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         }
-                        Text("Price: $99,00")
+                        Text("Price: $\(productDetailVM.productDetail.price),00")
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             .padding(.vertical, 8)
                         Text("Description: ")
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        Text("- apa ya")
+                        Text(productDetailVM.productDetail.description)
                     }
                     .frame(
                           minWidth: 0,
@@ -74,9 +67,12 @@ struct ProductDetail: View {
                 }
             }
         }
+        .task {
+            await productDetailVM.loadProductDetails(productId: productId)
+        }
     }
 }
 
 #Preview {
-    ProductDetail()
+    ProductDetail(productId: 28)
 }
