@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Users: View {
     @StateObject private var userVM = UserVM()
+    @Environment(\.editMode) private var editMode
     
     var body: some View {
         NavigationStack{
@@ -16,22 +17,23 @@ struct Users: View {
                 ForEach(userVM.users, id: \.id){ user in
                     UserCard(userData: user)
                 }
+                .onDelete(perform: delete)
             }
             .navigationTitle("Users")
             .toolbar{
                 ToolbarItem{
-                    Button{
-                        print("hi from edit button user")
-                    } label : {
-                        Text("Edit")
-                            .foregroundStyle(.red)
-                    }
+                    EditButton()
+                    .foregroundColor(.red)
                 }
             }
             .task{
                 await userVM.loadUsers()
             }
         }
+    }
+    
+    private func delete(offsets: IndexSet) {
+        userVM.users.remove(atOffsets: offsets)
     }
 }
 
