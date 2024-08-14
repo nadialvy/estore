@@ -28,7 +28,11 @@ struct Users: View {
                         .foregroundColor(.red)
                 }
             }
-            .confirmationDialog("Are you sure you want to delete this item?", isPresented: $showDeleteConfirmation) {
+            .confirmationDialog(
+                "Are you sure you want to delete this item?",
+                isPresented: $showDeleteConfirmation,
+                titleVisibility: .visible
+            ) {
                 Button("Delete", role: .destructive) {
                     if let offsets = deleteOffsets {
                         delete(offsets: offsets)
@@ -38,7 +42,6 @@ struct Users: View {
                     deleteOffsets = nil
                 }
             }
-            
             .task{
                 await userVM.loadUsers()
             }
