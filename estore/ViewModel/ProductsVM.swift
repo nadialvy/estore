@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class ProductsVM: ObservableObject {
     @Published var products = [ProductModel]()
     @Published var isLoading: Bool = false

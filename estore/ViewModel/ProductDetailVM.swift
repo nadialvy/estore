@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class ProductDetailVM: ObservableObject {
     @Published var productDetail = ProductModel(
         id: 1,
