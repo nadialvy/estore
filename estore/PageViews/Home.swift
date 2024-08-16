@@ -46,12 +46,14 @@ struct Home: View {
                     .tint(.red)
                 }
             }
+            .onAppear {
+                Task{
+                    await categoriesVM.loadCategories()
+                }
+            }
+
         }
         .tint(.red)
-        .task {
-            await categoriesVM.loadCategories()
-        }
-        
     }
 }
 

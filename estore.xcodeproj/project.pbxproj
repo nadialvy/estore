@@ -30,6 +30,9 @@
 		3DD3CA3E2C6B8BA8008E3820 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CA3D2C6B8BA8008E3820 /* UserModel.swift */; };
 		3DD3CA402C6B8D19008E3820 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CA3F2C6B8D19008E3820 /* UserVM.swift */; };
 		3DD563912C6C9D3A0080E05A /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563902C6C9D3A0080E05A /* UserCard.swift */; };
+		3DD563932C6F4CF70080E05A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3DD563922C6F4CF70080E05A /* Alamofire */; };
+		3DD563952C6F4CF70080E05A /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3DD563942C6F4CF70080E05A /* AlamofireDynamic */; };
+		3DD563982C6F63390080E05A /* ValidateImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563972C6F63390080E05A /* ValidateImageURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,7 @@
 		3DD3CA3D2C6B8BA8008E3820 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3DD3CA3F2C6B8D19008E3820 /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		3DD563902C6C9D3A0080E05A /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		3DD563972C6F63390080E05A /* ValidateImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateImageURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD563932C6F4CF70080E05A /* Alamofire in Frameworks */,
+				3DD563952C6F4CF70080E05A /* AlamofireDynamic in Frameworks */,
 				3DD3CA262C6B12D1008E3820 /* Alamofire in Frameworks */,
 				3DD3CA282C6B12D1008E3820 /* AlamofireDynamic in Frameworks */,
 			);
@@ -89,6 +95,7 @@
 		3DD3CA042C69D1E3008E3820 /* estore */ = {
 			isa = PBXGroup;
 			children = (
+				3DD563962C6F62E70080E05A /* Utils */,
 				3DD3CA182C69D348008E3820 /* App */,
 				3DD3CA152C69D306008E3820 /* PageViews */,
 				3DD3CA142C69D300008E3820 /* Views */,
@@ -178,6 +185,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		3DD563962C6F62E70080E05A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3DD563972C6F63390080E05A /* ValidateImageURL.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,6 +212,8 @@
 			packageProductDependencies = (
 				3DD3CA252C6B12D1008E3820 /* Alamofire */,
 				3DD3CA272C6B12D1008E3820 /* AlamofireDynamic */,
+				3DD563922C6F4CF70080E05A /* Alamofire */,
+				3DD563942C6F4CF70080E05A /* AlamofireDynamic */,
 			);
 			productName = estore;
 			productReference = 3DD3CA022C69D1E3008E3820 /* estore.app */;
@@ -264,6 +281,7 @@
 				3DD3CA1F2C6A237A008E3820 /* Search.swift in Sources */,
 				3DD3CA402C6B8D19008E3820 /* UserVM.swift in Sources */,
 				3DD3CA212C6A4C40008E3820 /* AddCategories.swift in Sources */,
+				3DD563982C6F63390080E05A /* ValidateImageURL.swift in Sources */,
 				3DD3CA3E2C6B8BA8008E3820 /* UserModel.swift in Sources */,
 				3DD3CA1B2C6A2362008E3820 /* Home.swift in Sources */,
 				3DD3CA322C6B482A008E3820 /* ProductModel.swift in Sources */,
@@ -498,6 +516,16 @@
 			productName = Alamofire;
 		};
 		3DD3CA272C6B12D1008E3820 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DD3CA242C6B12D1008E3820 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+		3DD563922C6F4CF70080E05A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DD3CA242C6B12D1008E3820 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		3DD563942C6F4CF70080E05A /* AlamofireDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3DD3CA242C6B12D1008E3820 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;

@@ -20,9 +20,7 @@ class ProductDetailVM: ObservableObject {
         category: CategoryModel(
             id: 1,
             name: "",
-            image: "",
-            creationAt: "",
-            updatedAt: ""
+            image: ""
         )
     )
     @Published var isLoading: Bool = false

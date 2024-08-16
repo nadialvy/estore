@@ -11,6 +11,4 @@ struct CategoryModel:Codable, Identifiable {
     var id: Int
     var name: String
     var image: String
-    var creationAt: String
-    var updatedAt: String
 }
