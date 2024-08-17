@@ -13,6 +13,8 @@ class ProductVM: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errMessage: String?
     
+    @Published var filteredProducts = [ProductModel]()
+    
     func loadProduct(categoryId: Int) async {
         isLoading = true
         defer { isLoading = false }
@@ -32,11 +34,24 @@ class ProductVM: ObservableObject {
         errMessage = nil
         
         do {
-            let newProduct = try await APIService.shared.postData(from: "products", payload: payload, response: ProductModel.self)
+            _ = try await APIService.shared.postData(from: "products", payload: payload, response: ProductModel.self)
             return "Success add new product"
         } catch {
             errMessage = "Failed to post product"
             return "Failed to add new product"
+        }
+    }
+    
+    func searchProduct(productName: String) async {
+        isLoading = true
+        defer { isLoading = false }
+        errMessage = nil
+        
+        do {
+            filteredProducts = try await APIService.shared.fetchData(from: "products/?title=\(productName)", returning: [ProductModel].self)
+        } catch {
+            errMessage = "Failed to search"
+            print(error)
         }
     }
 }

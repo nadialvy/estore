@@ -63,7 +63,7 @@ struct AddCategory: View {
         ]
         
         if(isValidURL){
-            let data = await categoryVM.addCategory(payload: payload)
+            _ = await categoryVM.addCategory(payload: payload)
 //            TODO: Add modal dialogue after post
             categoryName = ""
             imgUrl = ""
