@@ -27,20 +27,15 @@ class ProductVM: ObservableObject {
     }
     
     func addProduct(payload:  [String: Any]) async -> String {
-        print("masuk add product")
         isLoading = true
         defer { isLoading = false }
         errMessage = nil
         
         do {
-            print("masuk do")
             let newProduct = try await APIService.shared.postData(from: "products", payload: payload, response: ProductModel.self)
-            print(newProduct)
             return "Success add new product"
         } catch {
-            print("masuk catch")
             errMessage = "Failed to post product"
-            print(error)
             return "Failed to add new product"
         }
     }

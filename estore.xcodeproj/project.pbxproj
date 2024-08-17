@@ -36,6 +36,7 @@
 		3DD5639D2C7066150080E05A /* AddProductForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5639C2C7066150080E05A /* AddProductForm.swift */; };
 		3DD563A12C70DFD60080E05A /* AddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563A02C70DFD60080E05A /* AddCategory.swift */; };
 		3DD563A32C70F13F0080E05A /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563A22C70F13F0080E05A /* UserDetail.swift */; };
+		3DD563A52C70F1BF0080E05A /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563A42C70F1BF0080E05A /* AddProduct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		3DD5639C2C7066150080E05A /* AddProductForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductForm.swift; sourceTree = "<group>"; };
 		3DD563A02C70DFD60080E05A /* AddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategory.swift; sourceTree = "<group>"; };
 		3DD563A22C70F13F0080E05A /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		3DD563A42C70F1BF0080E05A /* AddProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				3DD3CA2F2C6B42F4008E3820 /* ProductCard.swift */,
 				3DD563902C6C9D3A0080E05A /* UserCard.swift */,
+				3DD563A42C70F1BF0080E05A /* AddProduct.swift */,
 				3DD563A22C70F13F0080E05A /* UserDetail.swift */,
 			);
 			path = Views;
@@ -285,6 +288,7 @@
 				3DD3CA1D2C6A236D008E3820 /* Users.swift in Sources */,
 				3DD3CA342C6B48EE008E3820 /* ProductVM.swift in Sources */,
 				3DD3CA3C2C6B7D13008E3820 /* ProductDetailVM.swift in Sources */,
+				3DD563A52C70F1BF0080E05A /* AddProduct.swift in Sources */,
 				3DD3CA232C6B12B4008E3820 /* APIService.swift in Sources */,
 				3DD3CA2C2C6B1ECE008E3820 /* Constant.swift in Sources */,
 				3DD3CA082C69D1E3008E3820 /* ContentView.swift in Sources */,

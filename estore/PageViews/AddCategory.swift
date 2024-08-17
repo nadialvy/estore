@@ -65,7 +65,6 @@ struct AddCategory: View {
         if(isValidURL){
             let data = await categoryVM.addCategory(payload: payload)
 //            TODO: Add modal dialogue after post
-            print(data)
             categoryName = ""
             imgUrl = ""
             isValidURL = true
