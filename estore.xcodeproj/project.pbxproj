@@ -33,6 +33,8 @@
 		3DD563932C6F4CF70080E05A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3DD563922C6F4CF70080E05A /* Alamofire */; };
 		3DD563952C6F4CF70080E05A /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3DD563942C6F4CF70080E05A /* AlamofireDynamic */; };
 		3DD563982C6F63390080E05A /* ValidateImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563972C6F63390080E05A /* ValidateImageURL.swift */; };
+		3DD5639B2C705AA90080E05A /* FormValidator in Frameworks */ = {isa = PBXBuildFile; productRef = 3DD5639A2C705AA90080E05A /* FormValidator */; };
+		3DD5639D2C7066150080E05A /* AddProductForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5639C2C7066150080E05A /* AddProductForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,7 @@
 		3DD3CA3F2C6B8D19008E3820 /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		3DD563902C6C9D3A0080E05A /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
 		3DD563972C6F63390080E05A /* ValidateImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateImageURL.swift; sourceTree = "<group>"; };
+		3DD5639C2C7066150080E05A /* AddProductForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD5639B2C705AA90080E05A /* FormValidator in Frameworks */,
 				3DD563932C6F4CF70080E05A /* Alamofire in Frameworks */,
 				3DD563952C6F4CF70080E05A /* AlamofireDynamic in Frameworks */,
 				3DD3CA262C6B12D1008E3820 /* Alamofire in Frameworks */,
@@ -161,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				3DD3CA2D2C6B330F008E3820 /* CategoriesVM.swift */,
+				3DD5639C2C7066150080E05A /* AddProductForm.swift */,
 				3DD3CA3F2C6B8D19008E3820 /* UserVM.swift */,
 				3DD3CA3B2C6B7D13008E3820 /* ProductDetailVM.swift */,
 				3DD3CA332C6B48EE008E3820 /* ProductsVM.swift */,
@@ -214,6 +219,7 @@
 				3DD3CA272C6B12D1008E3820 /* AlamofireDynamic */,
 				3DD563922C6F4CF70080E05A /* Alamofire */,
 				3DD563942C6F4CF70080E05A /* AlamofireDynamic */,
+				3DD5639A2C705AA90080E05A /* FormValidator */,
 			);
 			productName = estore;
 			productReference = 3DD3CA022C69D1E3008E3820 /* estore.app */;
@@ -245,6 +251,7 @@
 			mainGroup = 3DD3C9F92C69D1E3008E3820;
 			packageReferences = (
 				3DD3CA242C6B12D1008E3820 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3DD563992C705AA90080E05A /* XCRemoteSwiftPackageReference "SwiftUIFormValidator" */,
 			);
 			productRefGroup = 3DD3CA032C69D1E3008E3820 /* Products */;
 			projectDirPath = "";
@@ -282,6 +289,7 @@
 				3DD3CA402C6B8D19008E3820 /* UserVM.swift in Sources */,
 				3DD3CA212C6A4C40008E3820 /* AddCategories.swift in Sources */,
 				3DD563982C6F63390080E05A /* ValidateImageURL.swift in Sources */,
+				3DD5639D2C7066150080E05A /* AddProductForm.swift in Sources */,
 				3DD3CA3E2C6B8BA8008E3820 /* UserModel.swift in Sources */,
 				3DD3CA1B2C6A2362008E3820 /* Home.swift in Sources */,
 				3DD3CA322C6B482A008E3820 /* ProductModel.swift in Sources */,
@@ -507,6 +515,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		3DD563992C705AA90080E05A /* XCRemoteSwiftPackageReference "SwiftUIFormValidator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Open-Bytes/SwiftUIFormValidator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -529,6 +545,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DD3CA242C6B12D1008E3820 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
+		};
+		3DD5639A2C705AA90080E05A /* FormValidator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DD563992C705AA90080E05A /* XCRemoteSwiftPackageReference "SwiftUIFormValidator" */;
+			productName = FormValidator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -41,7 +41,7 @@ struct AddCategories: View {
                     Text("Create Category")
                         .foregroundStyle(.red)
                 }
-                .disabled(isSubmitting)
+                .disabled(isSubmitting || categoryName.isEmpty || imgUrl.isEmpty)
                 
             }
             .listStyle(GroupedListStyle())
