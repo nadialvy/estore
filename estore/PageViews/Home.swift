@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct Home: View {
-    @StateObject private var categoriesVM = CategoryVM()
+    @StateObject private var categoryVM = CategoryVM()
     
     var body: some View {
         NavigationStack{
             ScrollView{
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),]) {
-                    ForEach(categoriesVM.categories, id: \.id){ item in
+                    ForEach(categoryVM.categories, id: \.id){ item in
                         NavigationLink {
                             ProductList(categoryId: item.id)
                         } label: {
@@ -48,7 +48,7 @@ struct Home: View {
             }
             .onAppear {
                 Task{
-                    await categoriesVM.loadCategories()
+                    await categoryVM.loadCategories()
                 }
             }
 
