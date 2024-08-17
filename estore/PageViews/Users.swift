@@ -12,12 +12,21 @@ struct Users: View {
     @Environment(\.editMode) private var editMode
     @State private var showDeleteConfirmation = false
     @State private var deleteOffsets: IndexSet?
+    @State private var isDisplaySheet: Bool = false
     
     var body: some View {
         NavigationStack{
             List{
                 ForEach(userVM.users, id: \.id){ user in
                     UserCard(userData: user)
+                        .onTapGesture {
+                            isDisplaySheet = true
+                        }
+                        .sheet(isPresented: $isDisplaySheet){
+                            UserDetail(user: user)
+                            .presentationDetents([.medium])
+                            .presentationDragIndicator(.visible)
+                        }
                 }
                 .onDelete(perform: confirmDelete)
             }
