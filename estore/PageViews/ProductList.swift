@@ -10,20 +10,19 @@ import FormValidator
 
 struct ProductList: View {
     var categoryId: Int
-    @StateObject private var productsVM = ProductsVM()
+    @StateObject private var productVM = ProductVM()
     @State private var isDisplaySheet: Bool = false
-    
     
     @State private var isSubmitting: Bool = false
     
     @ObservedObject var addProductForm = AddProductForm()
     
+    @Environment(\.dismiss) var dismiss
     
-
     var body: some View {
         NavigationStack{
             List(content: {
-                ForEach(productsVM.products, id: \.id){ product in
+                ForEach(productVM.products, id: \.id){ product in
                     NavigationLink{
                         ProductDetail(productId: product.id)
                     } label: {
@@ -48,7 +47,7 @@ struct ProductList: View {
             }
         }
         .task {
-            await productsVM.loadProduct(categoryId: categoryId)
+            await productVM.loadProduct(categoryId: categoryId)
         }
         .sheet(isPresented: $isDisplaySheet){
             NavigationStack{
@@ -86,7 +85,9 @@ struct ProductList: View {
                             .validation(addProductForm.imagesValidation)
                     }
                     Button {
-                        
+                        Task{
+                            await addProduct()
+                        }
                     } label: {
                         Text("Create Product")
                             .foregroundStyle(.red)
@@ -103,6 +104,26 @@ struct ProductList: View {
                 Spacer()
             }
         }
+    }
+    
+    private func addProduct() async {
+        isSubmitting = true
+        let payload: [String: Any] = [
+            "title": addProductForm.title,
+            "price": Int(addProductForm.price)!,
+            "description": addProductForm.description,
+            "categoryId" : categoryId,
+            "images":addProductForm.images
+        ]
+        
+        let smt = await productVM.addProduct(payload: payload)
+        isSubmitting = false
+        dismiss()
+        addProductForm.title = ""
+        addProductForm.price = ""
+        addProductForm.description = ""
+        addProductForm.imageUrls = ""
+        
     }
 }
 

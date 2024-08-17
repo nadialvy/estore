@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Home: View {
-    @StateObject private var categoriesVM = CategoriesVM()
+    @StateObject private var categoriesVM = CategoryVM()
     
     var body: some View {
         NavigationStack{
@@ -39,7 +39,7 @@ struct Home: View {
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
-                        AddCategories()
+                        AddCategory()
                     } label: {
                         Image(systemName: "square.grid.3x1.folder.badge.plus")
                     }

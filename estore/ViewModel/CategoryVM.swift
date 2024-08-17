@@ -8,7 +8,7 @@
 import Foundation
 @MainActor
 
-class CategoriesVM: ObservableObject {
+class CategoryVM: ObservableObject {
     @Published var categories = [CategoryModel]()
     @Published var isLoading: Bool = false
     @Published var errMessage: String? = ""
@@ -26,11 +26,11 @@ class CategoriesVM: ObservableObject {
         }
     }
     
-    func addCategories(payload: [String: Any]) async -> String {
+    func addCategory(payload: [String: Any]) async -> String {
         isLoading = true
         defer { isLoading = false }
         errMessage = nil
-                
+        
         do {
             let newCategory = try await APIService.shared.postData(from: "categories", payload: payload, response: CategoryModel.self)
             print(newCategory)
@@ -40,8 +40,6 @@ class CategoriesVM: ObservableObject {
             print(error)
             return "Failed to add new category"
         }
-        
-        
     }
 }
 
