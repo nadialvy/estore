@@ -29,7 +29,7 @@ struct Search: View {
                             TextField("Search product", text: $debounceState.currentValue)
                             .onChange(of: debounceState.debouncedInput) {
                                 Task {
-                                    await productVM.searchProduct(productName: debounceState.debouncedInput)
+                                    await productVM.searchProduct(productName: debounceState.debouncedInput, minPrice: Int(minPrice), maxPrice: Int(maxPrice), catId: selection)
                                 }
                             }
                             .textFieldStyle(PlainTextFieldStyle())
@@ -51,7 +51,6 @@ struct Search: View {
                 .background(Color(.systemGray6))
                 .cornerRadius(8)
                 .padding(.horizontal)
-               
                 if(productVM.filteredProducts.isEmpty || debounceState.debouncedInput.isEmpty){
                     ContentUnavailableView.search
                 } else {
@@ -101,12 +100,15 @@ struct Search: View {
                     .tint(.red)
                     Button {
                         Task{
+                            await productVM.searchProduct(productName: debounceState.debouncedInput, minPrice: Int(minPrice), maxPrice: Int(maxPrice), catId: selection)
+                            isDisplaySheet = false
                         }
                     } label: {
                         Text("Apply Filter")
                             .foregroundStyle(.red)
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 12)
+                        
                     }
                     .background(Color(.white))
                     .cornerRadius(12)

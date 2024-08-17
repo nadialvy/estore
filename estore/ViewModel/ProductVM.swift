@@ -42,13 +42,18 @@ class ProductVM: ObservableObject {
         }
     }
     
-    func searchProduct(productName: String) async {
+    func searchProduct(productName: String?, minPrice: Int?, maxPrice: Int?, catId: Int?) async {
         isLoading = true
         defer { isLoading = false }
         errMessage = nil
         
+        let title = productName == nil || productName?.count == 0 ? "" : "title=\(productName!)"
+        let minimalPrice = minPrice == nil ? "" : "&price_min=\(minPrice!)"
+        let maximumPrice = maxPrice == nil ? "" : "&price_max=\(maxPrice!)"
+        let categoryId = catId == nil ? "" : "&categoryId=\(catId!)"
+        
         do {
-            filteredProducts = try await APIService.shared.fetchData(from: "products/?title=\(productName)", returning: [ProductModel].self)
+            filteredProducts = try await APIService.shared.fetchData(from: "products/?\(title)\(minimalPrice)\(maximumPrice)\(categoryId)", returning: [ProductModel].self)
         } catch {
             errMessage = "Failed to search"
             print(error)
