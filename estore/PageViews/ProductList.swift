@@ -10,6 +10,12 @@ import SwiftUI
 struct ProductList: View {
     var categoryId: Int
     @StateObject private var productsVM = ProductsVM()
+    @State private var isDisplaySheet: Bool = false
+    
+    @State private var title: String = ""
+    @State private var price: String = ""
+    @State private var description: String = ""
+    @State private var images: [String] = []
 
     var body: some View {
         NavigationStack{
@@ -30,7 +36,7 @@ struct ProductList: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button{
-                        print("helaurrr")
+                        isDisplaySheet = true
                     } label: {
                         Image(systemName: "plus")
                             .foregroundColor(.red)
@@ -40,6 +46,68 @@ struct ProductList: View {
         }
         .task {
             await productsVM.loadProduct(categoryId: categoryId)
+        }
+        .sheet(isPresented: $isDisplaySheet){
+            NavigationStack{
+                Form{
+                    Section(header: Text("PRODUCT DETAILS")) {
+                        TextField("Title", text: $title)
+                        TextField("Price", text: $price)
+                            .keyboardType(.numberPad)
+                        TextField("Description", text: $description)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(6)
+                            .frame(height: 100)
+                            .foregroundStyle(Color.clear)
+                            .overlay {
+                                TextEditor(text: $description)
+                            }
+                        HStack{
+                            Text("Category ID")
+                                .foregroundStyle(.gray)
+                                .opacity(0.5)
+                            Spacer()
+                            Text("\(categoryId)")
+                                .foregroundStyle(.gray)
+                                .opacity(0.5)
+                        }
+                        TextField(
+                            "Images (comma-separated URLs)",
+                            text: Binding(
+                                get: {
+                                    images.joined(
+                                        separator: ", "
+                                    )
+                                },
+                                set: { newValue in
+                                    images = newValue.split(
+                                        separator: ","
+                                    ).map {
+                                        $0.trimmingCharacters(
+                                            in: .whitespaces
+                                        )
+                                    }
+                                }
+                            )
+                        )
+                    }
+                    
+                    Button {
+                        
+                    } label: {
+                        Text("Create Product")
+                            .foregroundStyle(.red)
+                    }
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar{
+                    ToolbarItem(placement: .principal){
+                        Text("New Product")
+                            .fontWeight(.medium)
+                    }
+                }
+                Spacer()
+            }
         }
     }
 }
