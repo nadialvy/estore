@@ -26,7 +26,12 @@ struct ProductList: View {
                     NavigationLink{
                         ProductDetail(productId: product.id)
                     } label: {
-                        ProductCard(imgUrl: product.images[0], name: product.title, desc: product.description, price: product.price)
+                        ProductCard(
+                            imgUrl: product.images.first ?? "" ,
+                            name: product.title,
+                            desc: product.description,
+                            price: product.price
+                        )
                     }
                 }
             })
