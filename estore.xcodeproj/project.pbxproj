@@ -16,7 +16,6 @@
 		3DD3CA1F2C6A237A008E3820 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CA1E2C6A237A008E3820 /* Search.swift */; };
 		3DD3CA232C6B12B4008E3820 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CA222C6B12B4008E3820 /* APIService.swift */; };
 		3DD3CA262C6B12D1008E3820 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3DD3CA252C6B12D1008E3820 /* Alamofire */; };
-		3DD3CA282C6B12D1008E3820 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3DD3CA272C6B12D1008E3820 /* AlamofireDynamic */; };
 		3DD3CA2A2C6B13C4008E3820 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CA292C6B13C4008E3820 /* CategoryModel.swift */; };
 		3DD3CA2C2C6B1ECE008E3820 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CA2B2C6B1ECE008E3820 /* Constant.swift */; };
 		3DD3CA2E2C6B330F008E3820 /* CategoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CA2D2C6B330F008E3820 /* CategoryVM.swift */; };
@@ -30,7 +29,6 @@
 		3DD3CA402C6B8D19008E3820 /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3CA3F2C6B8D19008E3820 /* UserVM.swift */; };
 		3DD563912C6C9D3A0080E05A /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563902C6C9D3A0080E05A /* UserCard.swift */; };
 		3DD563932C6F4CF70080E05A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3DD563922C6F4CF70080E05A /* Alamofire */; };
-		3DD563952C6F4CF70080E05A /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3DD563942C6F4CF70080E05A /* AlamofireDynamic */; };
 		3DD563982C6F63390080E05A /* ValidateImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563972C6F63390080E05A /* ValidateImageURL.swift */; };
 		3DD5639B2C705AA90080E05A /* FormValidator in Frameworks */ = {isa = PBXBuildFile; productRef = 3DD5639A2C705AA90080E05A /* FormValidator */; };
 		3DD5639D2C7066150080E05A /* AddProductForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5639C2C7066150080E05A /* AddProductForm.swift */; };
@@ -38,6 +36,8 @@
 		3DD563A32C70F13F0080E05A /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563A22C70F13F0080E05A /* UserDetail.swift */; };
 		3DD563A52C70F1BF0080E05A /* AddProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563A42C70F1BF0080E05A /* AddProduct.swift */; };
 		3DD563A82C70FF800080E05A /* DebounceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD563A72C70FF800080E05A /* DebounceState.swift */; };
+		60A7301C2C716ED000FEFCB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A7301B2C716ED000FEFCB3 /* LaunchScreen.storyboard */; };
+		60A7301E2C71743A00FEFCB3 /* applogomoya.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A7301D2C71743A00FEFCB3 /* applogomoya.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +69,8 @@
 		3DD563A42C70F1BF0080E05A /* AddProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProduct.swift; sourceTree = "<group>"; };
 		3DD563A72C70FF800080E05A /* DebounceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebounceState.swift; sourceTree = "<group>"; };
 		3DD563AD2C7119160080E05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		60A7301B2C716ED000FEFCB3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		60A7301D2C71743A00FEFCB3 /* applogomoya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applogomoya.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +80,7 @@
 			files = (
 				3DD5639B2C705AA90080E05A /* FormValidator in Frameworks */,
 				3DD563932C6F4CF70080E05A /* Alamofire in Frameworks */,
-				3DD563952C6F4CF70080E05A /* AlamofireDynamic in Frameworks */,
 				3DD3CA262C6B12D1008E3820 /* Alamofire in Frameworks */,
-				3DD3CA282C6B12D1008E3820 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +117,7 @@
 				3DD3CA162C69D32C008E3820 /* Services */,
 				3DD3CA192C69D37D008E3820 /* Resources */,
 				3DD3CA0B2C69D1E5008E3820 /* Preview Content */,
+				60A7301B2C716ED000FEFCB3 /* LaunchScreen.storyboard */,
 			);
 			path = estore;
 			sourceTree = "<group>";
@@ -196,6 +197,7 @@
 		3DD3CA192C69D37D008E3820 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				60A7301D2C71743A00FEFCB3 /* applogomoya.png */,
 				3DD3CA092C69D1E5008E3820 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -235,9 +237,7 @@
 			name = estore;
 			packageProductDependencies = (
 				3DD3CA252C6B12D1008E3820 /* Alamofire */,
-				3DD3CA272C6B12D1008E3820 /* AlamofireDynamic */,
 				3DD563922C6F4CF70080E05A /* Alamofire */,
-				3DD563942C6F4CF70080E05A /* AlamofireDynamic */,
 				3DD5639A2C705AA90080E05A /* FormValidator */,
 			);
 			productName = estore;
@@ -286,7 +286,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60A7301C2C716ED000FEFCB3 /* LaunchScreen.storyboard in Resources */,
 				3DD3CA0D2C69D1E5008E3820 /* Preview Assets.xcassets in Resources */,
+				60A7301E2C71743A00FEFCB3 /* applogomoya.png in Resources */,
 				3DD3CA0A2C69D1E5008E3820 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +463,7 @@
 				INFOPLIST_FILE = estore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -490,6 +493,7 @@
 				INFOPLIST_FILE = estore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -533,8 +537,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
+				kind = exactVersion;
+				version = 5.9.1;
 			};
 		};
 		3DD563992C705AA90080E05A /* XCRemoteSwiftPackageReference "SwiftUIFormValidator" */ = {
@@ -553,20 +557,10 @@
 			package = 3DD3CA242C6B12D1008E3820 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		3DD3CA272C6B12D1008E3820 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3DD3CA242C6B12D1008E3820 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
-		};
 		3DD563922C6F4CF70080E05A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3DD3CA242C6B12D1008E3820 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		3DD563942C6F4CF70080E05A /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3DD3CA242C6B12D1008E3820 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 		3DD5639A2C705AA90080E05A /* FormValidator */ = {
 			isa = XCSwiftPackageProductDependency;
