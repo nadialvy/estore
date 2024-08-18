@@ -28,17 +28,31 @@ class ProductVM: ObservableObject {
         }
     }
     
-    func addProduct(payload:  [String: Any]) async -> String {
+    //    func addProduct(payload:  [String: Any]) async -> String {
+    //        isLoading = true
+    //        defer { isLoading = false }
+    //        errMessage = nil
+    //
+    //        do {
+    //            _ = try await APIService.shared.postData(from: "products", payload: payload, response: ProductModel.self)
+    //            return "Success add new product"
+    //        } catch {
+    //            errMessage = "Failed to post product"
+    //            return "Failed to add new product"
+    //        }
+    //    }
+    
+    func addProduct(payload: [String: Any]) async throws -> ProductModel {
         isLoading = true
         defer { isLoading = false }
         errMessage = nil
         
         do {
-            _ = try await APIService.shared.postData(from: "products", payload: payload, response: ProductModel.self)
-            return "Success add new product"
+            let newProduct = try await APIService.shared.postData(from: "products", payload: payload, response: ProductModel.self)
+            return newProduct
         } catch {
-            errMessage = "Failed to post product"
-            return "Failed to add new product"
+            errMessage = "Failed to post product: \(error.localizedDescription)"
+            throw error
         }
     }
     
